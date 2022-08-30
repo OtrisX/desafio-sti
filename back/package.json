@@ -6,7 +6,7 @@
     "express": "^4.18.1"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"cd ../front && npm build\"",
+    "start": "npm run server",
     "serverdev": "nodemon ./server/server.js",
     "server": "node ./server/server.js"
   },

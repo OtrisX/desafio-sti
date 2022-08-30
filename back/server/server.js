@@ -9,7 +9,11 @@ const Alunos = require("../classes/alunosClass")
 const Cursos = require ("../classes/cursosClass")
 app.use(cors())
 
+app.use(express.static(`${__dirname}/../../front/build`));
 
+app.get("/", (req, res, next) => {
+    res.sendFile(`${__dirname}/../../front/build/index.html`)
+})
 
 app.get("/alunos/notas",(req, res, next) => {
     const uff = new Universidade(__dirname,"/../data/notas.csv")
